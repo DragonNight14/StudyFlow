@@ -12,8 +12,10 @@
   "theme_color": "#667eea",
   "orientation": "portrait-primary",
   "scope": "./",
-  "lang": "en",
-  "categories": ["education", "productivity"],
+  "categories": [
+    "education",
+    "productivity"
+  ],
   "icons": [
     {
       "src": "./icon-192x192.png",
@@ -67,8 +69,11 @@
     }
   ],
   "prefer_related_applications": false,
-  "related_applications": [],
-  "display_override": ["standalone", "minimal-ui"],
+  "display_override": [
+    "standalone",
+    "minimal-ui",
+    "window-controls-overlay"
+  ],
   "edge_side_panel": {
     "preferred_width": 400
   },
