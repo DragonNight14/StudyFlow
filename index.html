@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +10,15 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="HW Tracker">
     <meta name="msapplication-TileColor" content="#667eea">
-    <meta name="msapplication-TileImage" content="./icon-192x192.png">
-    <title>HW Tracker - Glassmorphic Assignment Manager</title>
-    <link rel="manifest" href="./manifest.json">
-    <link rel="icon" type="image/png" sizes="192x192" href="./icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="./icon-512x512.png">
-    <link rel="apple-touch-icon" href="./icon-192x192.png">
+    <meta name="msapplication-TileImage" content="/icon-192x192.png">
+    <meta name="description" content="Track and manage your academic assignments with ease">
+    <title>Assignment Tracker - Manage Your Academic Assignments</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512x512.png">
+    <link rel="apple-touch-icon" href="/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/icon-512x512.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="settings.css">
@@ -278,6 +282,31 @@
                 });
             }
         });
+
+        // Register Android-optimized Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw-android.js')
+                    .then(registration => {
+                        console.log('Android SW registered:', registration.scope);
+                        
+                        // Enable background sync for Android
+                        if ('sync' in window.ServiceWorkerRegistration.prototype) {
+                            registration.sync.register('assignment-sync');
+                        }
+                        
+                        // Request notification permission for Android
+                        if ('Notification' in window && 'PushManager' in window) {
+                            Notification.requestPermission().then(permission => {
+                                console.log('Notification permission:', permission);
+                            });
+                        }
+                    })
+                    .catch(error => {
+                        console.log('Android SW registration failed:', error);
+                    });
+            });
+        }
     </script>
 </body>
 </html>
