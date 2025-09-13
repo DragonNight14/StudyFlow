@@ -6,19 +6,25 @@
   "dir": "ltr",
   "lang": "en",
   "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b5",
-  "start_url": "/StudyFlow/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#667eea",
   "theme_color": "#667eea",
   "orientation": "portrait",
   "prefer_related_applications": true,
-  "related_applications": [{
-    "platform": "play",
-    "url": "https://play.google.com/store/apps/details?id=com.yourdomain.studyflow",
-    "id": "com.yourdomain.studyflow"
-  }],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.yourdomain.studyflow",
+      "id": "com.yourdomain.studyflow"
+    }
+  ],
   "scope": "/StudyFlow/",
-  "categories": ["education", "productivity", "utilities"],
+  "categories": [
+    "education",
+    "productivity",
+    "utilities"
+  ],
   "icons": [
     {
       "src": "/StudyFlow/icon-192x192.png",
@@ -63,7 +69,12 @@
       "short_name": "Create",
       "description": "Create a new assignment",
       "url": "/StudyFlow/create-assignment.html",
-      "icons": [{ "src": "/StudyFlow/icon-192x192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/StudyFlow/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "View Calendar",
@@ -78,7 +89,11 @@
       "url": "/StudyFlow/?view=settings"
     }
   ],
-  "display_override": ["standalone", "minimal-ui"],
+  "display_override": [
+    "standalone",
+    "minimal-ui",
+    "window-controls-overlay"
+  ],
   "edge_side_panel": {
     "preferred_width": 400
   },
