@@ -6,7 +6,7 @@
   "dir": "ltr",
   "lang": "en",
   "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b5",
-  "start_url": "./",
+  "start_url": "https://dragonnight14.github.io/StudyFlow/",
   "display": "standalone",
   "background_color": "#667eea",
   "theme_color": "#667eea",
@@ -19,7 +19,7 @@
       "id": "com.yourdomain.studyflow"
     }
   ],
-  "scope": "/StudyFlow/",
+  "scope": "https://dragonnight14.github.io/StudyFlow/",
   "categories": [
     "education",
     "productivity",
